@@ -3,12 +3,14 @@ const tbodyTasks = document.querySelector("#tbody-tasks");
 
 const KEY_TASKS_LOCAL_STORAGE ="tasks";
 
-const tasks =  getTasksLocalStore();
+var tasks =  getTasksLocalStore();
 
-if(tasks.length > 0){
+if(tasks !== null){
     updateViewTable(tasks);
 }
-
+else{
+    tasks=[];
+}
 form.addEventListener("submit", (event) => {
 //previne que o submit do formulário atualize a página
     event.preventDefault();
