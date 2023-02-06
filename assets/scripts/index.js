@@ -3,7 +3,7 @@ const tbodyTasks = document.querySelector("#tbody-tasks");
 
 const KEY_TASKS_LOCAL_STORAGE ="tasks";
 
-var tasks =  getTasksLocalStore();
+var tasks =  getTasksLocalStorage()
 
 if(tasks !== null){
     updateViewTable(tasks);
@@ -58,9 +58,11 @@ function saveTasksLocalStorage(){
     const listTasksString = JSON.stringify(tasks);
     localStorage.setItem(KEY_TASKS_LOCAL_STORAGE, listTasksString);
 }
-
-function getTasksLocalStore(){
-    const dataString =localStorage.getItem(KEY_TASKS_LOCAL_STORAGE);
-    const list= JSON.parse(dataString);
+function getTasksLocalStorage(){
+    const dataString = localStorage.getItem(KEY_TASKS_LOCAL_STORAGE);
+    const list = JSON.parse(dataString);
     return list;
 }
+
+
+ 
